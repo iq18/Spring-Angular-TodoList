@@ -2,3 +2,9 @@ table {
   width:60%;
   margin: 3em auto;
 }
+
+.badge {
+  width: 10em;
+  font-size: 1em;
+
+}
