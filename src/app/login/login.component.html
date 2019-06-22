@@ -1,4 +1,4 @@
-<small *ngIf="invalidLogin" class="error-message">{{ errorMessage }}</small>
+<div *ngIf="invalidLogin" class="error-message alert alert-danger" role="alert">{{ errorMessage }}</div>
 <div class="login">
   User Name: <input type="text" name="username" id="uname"  [(ngModel)]="username"> <br><br>
   Password: <input type="password" id="pword" [(ngModel)]="password"> <br><br>
