@@ -1,8 +1,24 @@
+<div *ngIf="errorStatus" class="error-message alert alert-danger" role="alert">{{ errorMessage }}</div>
+
 <div class="card">
     <div class="card-body">
       <h5 class="card-title">Welcome to the app, {{ name }}</h5>
       <p class="card-text">Manage your Todos</p>
       <a routerLink="/todos" class="btn btn-primary">Visit Todo List</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Connect to back end</h5>
+      <button class="btn btn-primary" (click)="getParameterisedWelcomeMessage()">Get Message</button>
+    </div>
+  </div>
+
+  <div class="card" *ngIf="welcomeMessage">
+    <div class="card-body">
+      <h5 class="card-title">Welcome message</h5>
+      {{ welcomeMessage }}
     </div>
   </div>
 

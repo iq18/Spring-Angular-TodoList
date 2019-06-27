@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 public class Todo {
 	
@@ -16,27 +18,39 @@ public class Todo {
 	private Long id;
 	
 	@NotEmpty
+	private String username;
+	
+	@NotEmpty
 	private String text;
 	
 	private boolean complete;
 	
-	private LocalDate date;
+	@JsonFormat(pattern="MM/dd/yyyy")
+	private LocalDate dueDate;
+	
+	//TODO allow user specify number of days to complete todo
+	// add amount to date in constructor to set individual dates
 	
 	public Todo() {
 	}
 
-	public Todo(@NotEmpty String text, LocalDate date) {
+	public Todo(@NotEmpty String username, @NotEmpty String text, LocalDate dueDate) {
+		this.username = username;
 		this.text = text;
 		this.complete = false;
-		this.date = date;
+		this.dueDate = dueDate;
+	}
+	
+	
+	public Todo(Long id, @NotEmpty String username, @NotEmpty String text, LocalDate dueDate) {
+		this.id = id;
+		this.username = username;
+		this.text = text;
+		this.complete = false;
+		this.dueDate = dueDate;
 	}
 
-	public Todo(Long id, @NotEmpty String text, LocalDate date) {
-		this.id = id;
-		this.text = text;
-		this.complete = false;
-		this.date = date;
-	}
+
 
 	public Long getId() {
 		return id;
@@ -62,17 +76,27 @@ public class Todo {
 		this.complete = complete;
 	}
 
-	public LocalDate getDate() {
-		return date;
+	public LocalDate getDuedate() {
+		return dueDate;
 	}
 
-	public void setDate(LocalDate date) {
-		this.date = date;
+	public void setDuedate(LocalDate dueDate) {
+		this.dueDate = dueDate;
+	}
+	
+	
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	@Override
 	public String toString() {
-		return "Id: " + id + " Text: " + text + " Complete: " + complete + " Date: " + date;
+		return "Id: " + id + " Text: " + text + " Complete: " + complete + " Date: " + dueDate;
 	}
 	
 	
