@@ -33,6 +33,8 @@ public class TodoApplication {
 			todoService.save(new Todo(2L, "admin","Paint the bathroom", LocalDate.now().plus(7, ChronoUnit.DAYS)));
 			todoService.save(new Todo(3L, "jon", "Buy new curtains",LocalDate.now().plus(7, ChronoUnit.DAYS)));
 			todoService.save(new Todo(4L, "admin", "Run a marathon",LocalDate.now().plus(7, ChronoUnit.DAYS)));
+			todoService.save(new Todo(5L, "admin", "Learn React",LocalDate.now().plus(7, ChronoUnit.DAYS)));
+//			todoService.save(new Todo(6L, "admin", "Persist todos to MySQL database",LocalDate.now().plus(7, ChronoUnit.DAYS)));
 		};
 	}
 

@@ -1,5 +1,7 @@
 package todo.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,14 @@ public class TodoService {
 	
 	public Todo save(Todo todo) {
 		return todoRepository.save(todo);
+	}
+	
+	public void deleteTodo(Todo todo) {
+		todoRepository.delete(todo);
+	}
+	
+	public void deleteTodoById(Long id) {
+		todoRepository.deleteById(id);
 	}
 
 }

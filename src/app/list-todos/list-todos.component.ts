@@ -10,15 +10,15 @@ import { TodoDataService } from '../services/data/todo-data.service';
 export class ListTodosComponent implements OnInit {
 
   todos: Todo[];
-  // todos = [
-  //   new Todo(1, 'Learn Spring Boot', false, new Date()),
-  //   new Todo(2, 'Add MariaDB to project', false, new Date()),
-  //   new Todo(3, 'Use Angular CLI', false, new Date())
-  // ];
+  deleteMessage: string;
 
   constructor(private todoDataService: TodoDataService ) { }
 
   ngOnInit() {
+    this.getAllTodos();
+  }
+
+  getAllTodos() {
     this.todoDataService.getAllTodos().subscribe(
       response => {
         this.todos = response;
@@ -26,6 +26,17 @@ export class ListTodosComponent implements OnInit {
         this.todos.forEach(element => {
           element.done = 'False';
         });
+      }
+    );
+  }
+
+  deleteTodo(id) {
+    this.todoDataService.deleteTodoById(id)
+    .subscribe(
+      response => {
+        console.log('Response: ', response);
+        this.getAllTodos();
+        this.deleteMessage = 'Delete successful';
       }
     );
   }

@@ -5,6 +5,11 @@ table {
 
 .badge {
   width: 10em;
-  font-size: 1em;
+  font-size: 0.9em;
 
+}
+
+.delete{
+  width:60%;
+  margin: 0 auto;
 }
