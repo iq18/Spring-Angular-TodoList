@@ -18,7 +18,10 @@
       <td>{{ todo.text }}</td>
       <td>{{ todo.dueDate | date }} </td>
       <td class="badge badge-danger">{{ todo.done }}</td>
-      <td><button (click)="deleteTodo(todo.id)"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+      <td><button (click)="deleteTodo(todo.id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+          &nbsp;<button><i class="fa fa-refresh" aria-hidden="true"></i></button></td>
     </tr>
   </tbody>
 </table>
+
+<button class="btn btn-primary add">Add Todo</button>
