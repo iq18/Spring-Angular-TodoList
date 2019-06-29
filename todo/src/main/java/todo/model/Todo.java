@@ -17,15 +17,15 @@ public class Todo {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@NotEmpty
-	private String username;
+//	@NotEmpty
+//	private String username;
 	
 	@NotEmpty
 	private String text;
 	
 	private boolean complete;
 	
-	@JsonFormat(pattern="MM/dd/yyyy")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private LocalDate dueDate;
 	
 	//TODO allow user specify number of days to complete todo
@@ -33,18 +33,25 @@ public class Todo {
 	
 	public Todo() {
 	}
-
-	public Todo(@NotEmpty String username, @NotEmpty String text, LocalDate dueDate) {
-		this.username = username;
+	
+	public Todo(@NotEmpty String text, LocalDate dueDate) {
 		this.text = text;
 		this.complete = false;
 		this.dueDate = dueDate;
 	}
 	
 	
-	public Todo(Long id, @NotEmpty String username, @NotEmpty String text, LocalDate dueDate) {
+
+//	public Todo(@NotEmpty String username, @NotEmpty String text, LocalDate dueDate) {
+//		this.username = username;
+//		this.text = text;
+//		this.complete = false;
+//		this.dueDate = dueDate;
+//	}
+	
+	
+	public Todo(Long id, @NotEmpty String text, LocalDate dueDate) {
 		this.id = id;
-		this.username = username;
 		this.text = text;
 		this.complete = false;
 		this.dueDate = dueDate;
@@ -86,13 +93,13 @@ public class Todo {
 	
 	
 
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
+//	public String getUsername() {
+//		return username;
+//	}
+//
+//	public void setUsername(String username) {
+//		this.username = username;
+//	}
 
 	@Override
 	public String toString() {

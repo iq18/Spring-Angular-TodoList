@@ -1,0 +1,23 @@
+<div class="card">
+  <form>
+    <div class="form-group">
+      <label for="todo">Todo text</label>
+      <input type="text" [(ngModel)]="todo.text" name="todo" class="form-control" id="todo" aria-describedby="todo" placeholder="{{ todo.text }}">
+    </div>
+    <div class="form-group">
+      <label for="dueDate">Due date</label>
+      <input type="date" [ngModel]="todo.dueDate | date: 'yyyy-MM-dd' "
+             (ngModel)="todo.dueDate = $event"
+             name="dueDate" class="form-control" id="dueDate"
+             aria-describedby="due-date" placeholder="{{ todo.dueDate}}">
+    </div>
+  <button type="submit" class="btn btn-primary" (click)="saveTodo()">Save</button>
+  </form>
+</div>
+
+
+
+
+
+
+

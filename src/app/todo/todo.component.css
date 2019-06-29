@@ -1,0 +1,13 @@
+.card {
+  width: 50%;
+  margin:100px auto;
+  padding: 10px;
+  border-top: 2px solid red;
+
+}
+
+label {
+  font-weight: bold;
+  position: relative;
+  left: 0;
+}

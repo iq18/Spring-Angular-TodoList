@@ -1,0 +1,14 @@
+<h1>Log In</h1>
+<div class="card">
+<form>
+  <div class="form-group">
+    <label for="uname">Text</label>
+    <input type="text" class="form-control ip" id="text" name="text" aria-describedby="text" placeholder="Enter todo" [(ngModel)]="text">
+  </div>
+  <div class="form-group">
+    <label for="dueDate">Due date</label>
+    <input type="date" class="form-control ip" id="dueDate"  name="dueDate" [(ngModel)]="dueDate">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="saveTodo()">Save</button>
+</form>
+</div>
