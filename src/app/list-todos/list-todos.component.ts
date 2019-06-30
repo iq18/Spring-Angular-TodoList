@@ -25,7 +25,7 @@ export class ListTodosComponent implements OnInit {
         this.todos = response;
         console.log(response);
         this.todos.forEach(element => {
-          element.done = 'False';
+          element.done = element.complete ? 'True' : 'False';
         });
       }
     );
@@ -48,6 +48,19 @@ export class ListTodosComponent implements OnInit {
 
   addTodo() {
     this.router.navigate(['addtodos']);
+  }
+
+  markAsDone(todo) {
+    todo.complete = true;
+    todo.done = 'True';
+    this.todoDataService.updateTodo(todo.id, todo)
+    .subscribe ();
+    this.router.navigate(['todos']);
+  }
+
+  getDueDateBadge(todo: Todo) {
+    //   toggle color class for badge
+    return todo.complete ? 'badge-success' : 'badge-primary';
   }
 
 

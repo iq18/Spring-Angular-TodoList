@@ -20,4 +20,9 @@ table {
   left: 20%;
 }
 
+.completed{
+  text-decoration: line-through;
+}
+
+
 

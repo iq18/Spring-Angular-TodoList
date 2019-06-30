@@ -16,9 +16,13 @@
   </div>
 
   <div class="card" *ngIf="welcomeMessage">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="welcomeMessage = ''">
+          <span aria-hidden="true">&times;</span>
+        </button>
     <div class="card-body">
       <h5 class="card-title">Welcome message</h5>
       {{ welcomeMessage }}
     </div>
+
   </div>
 
