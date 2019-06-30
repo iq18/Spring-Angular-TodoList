@@ -51,8 +51,13 @@ export class ListTodosComponent implements OnInit {
   }
 
   markAsDone(todo) {
-    todo.complete = true;
-    todo.done = 'True';
+    if (todo.complete === false) {
+      todo.complete = true;
+      todo.done = 'True';
+    } else {
+      todo.complete = false;
+      todo.done = 'False';
+    }
     this.todoDataService.updateTodo(todo.id, todo)
     .subscribe ();
     this.router.navigate(['todos']);
