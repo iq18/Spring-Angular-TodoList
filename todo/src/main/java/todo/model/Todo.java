@@ -17,6 +17,7 @@ public class Todo {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+//  TODO add User
 //	@NotEmpty
 //	private String username;
 	
@@ -41,22 +42,12 @@ public class Todo {
 	}
 	
 	
-
-//	public Todo(@NotEmpty String username, @NotEmpty String text, LocalDate dueDate) {
-//		this.username = username;
-//		this.text = text;
-//		this.complete = false;
-//		this.dueDate = dueDate;
-//	}
-	
-	
 	public Todo(Long id, @NotEmpty String text, LocalDate dueDate) {
 		this.id = id;
 		this.text = text;
 		this.complete = false;
 		this.dueDate = dueDate;
 	}
-
 
 
 	public Long getId() {
@@ -91,16 +82,6 @@ public class Todo {
 		this.dueDate = dueDate;
 	}
 	
-	
-
-//	public String getUsername() {
-//		return username;
-//	}
-//
-//	public void setUsername(String username) {
-//		this.username = username;
-//	}
-
 	@Override
 	public String toString() {
 		return "Id: " + id + " Text: " + text + " Complete: " + complete + " Date: " + dueDate;

@@ -35,7 +35,6 @@ public class TodoService {
 	}
 	
 	public Todo updateTodo(Long id, Todo todo) {
-		// Todo todo = findTodo(id).get();
 		return save(todo);
 	}
 

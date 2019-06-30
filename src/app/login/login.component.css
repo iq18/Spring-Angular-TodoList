@@ -19,4 +19,6 @@ h1 {
 .error-message {
   color: red;
   font-weight: bold;
+  width:60%;
+  margin: 0 auto;
 }
