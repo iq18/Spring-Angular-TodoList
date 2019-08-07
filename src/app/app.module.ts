@@ -41,7 +41,7 @@ import { HttpInterceptorBasicAuthService } from './services/http/http-intercepto
     { provide: HTTP_INTERCEPTORS,
       useClass: HttpInterceptorBasicAuthService,
       multi: true
-      }
+     }
   ],
   bootstrap: [AppComponent]
 })
