@@ -17,10 +17,6 @@ public class Todo {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-//  TODO add User
-//	@NotEmpty
-//	private String username;
-	
 	@NotEmpty
 	private String text;
 	
@@ -28,6 +24,14 @@ public class Todo {
 	
 	@JsonFormat(pattern="yyyy-MM-dd")
 	private LocalDate dueDate;
+	
+//  TODO add User
+//	@NotEmpty
+//	private String username;
+	
+	private String userEmail;
+	
+	private boolean emailSent;
 	
 	//TODO allow user specify number of days to complete todo
 	// add amount to date in constructor to set individual dates
@@ -74,14 +78,32 @@ public class Todo {
 		this.complete = complete;
 	}
 
-	public LocalDate getDuedate() {
+	public LocalDate getDueDate() {
 		return dueDate;
 	}
 
-	public void setDuedate(LocalDate dueDate) {
+	public void setDueDate(LocalDate dueDate) {
 		this.dueDate = dueDate;
 	}
 	
+	
+	
+	public String getUserEmail() {
+		return userEmail;
+	}
+
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
+	}
+	
+	public boolean isEmailSent() {
+		return emailSent;
+	}
+
+	public void setEmailSent(boolean emailSent) {
+		this.emailSent = emailSent;
+	}
+
 	@Override
 	public String toString() {
 		return "Id: " + id + " Text: " + text + " Complete: " + complete + " Date: " + dueDate;

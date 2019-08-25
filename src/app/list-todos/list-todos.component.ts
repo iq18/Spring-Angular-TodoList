@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Todo } from '../todo';
 import { TodoDataService } from '../services/data/todo-data.service';
 import { Router } from '@angular/router';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-list-todos',
@@ -13,10 +14,25 @@ export class ListTodosComponent implements OnInit {
   todos: Todo[];
   deleteMessage: string;
 
-  constructor(private todoDataService: TodoDataService, private router: Router ) { }
+  constructor(private todoDataService: TodoDataService,
+              private router: Router,
+              private notificationService: NotificationService  ) { }
 
   ngOnInit() {
     this.getAllTodos();
+    console.log('PRE - ngOnInit');
+    // need create method subscribes to this method call + deals with result
+    this.sendOverdueNotifications();
+    console.log('POST - ngOnInit');
+  }
+
+  sendOverdueNotifications() {
+    this.notificationService.sendOverdueNotifications().subscribe(
+      response => {
+        console.log(response);
+      }
+    );
+
   }
 
   getAllTodos() {

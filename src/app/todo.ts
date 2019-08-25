@@ -6,6 +6,8 @@ export class Todo {
   complete: boolean;
   dueDate: Date;
   done: string;
+  userEmail: string;
+  emailSent: boolean;
 
   constructor(text: string, dueDate: Date) {
       // this.id = id;
@@ -14,6 +16,8 @@ export class Todo {
       this.complete = false;
       this.dueDate = dueDate;
       this.done = '';
+      this.userEmail = '';
+      this.emailSent = false;
       // this.done = this.complete ? 'True' : 'False';
   }
 }
